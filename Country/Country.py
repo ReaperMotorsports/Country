@@ -14,10 +14,9 @@ def display_codes(countries):
     codes = list(countries.keys())
     codes.sort()
     code_tag = "Country Code:  "
-    code = code.upper()
     for code in codes:
-        codes_line += code + " "
-    print(codes_line)
+        code_tag += code + " "
+    print(code_tag)
 
 def view(countries):
     display_codes(countries)
@@ -51,25 +50,23 @@ def delete(countries):
         print("There is no country with that code.\n")
 
 def main():
-    countries = {"US": "United States",
-                 "DE": "Germany",
-                 "AT": "Austria"}
+    countries = {"US": "United States","DE": "Germany","AT": "Austria"}
 
-main_menu()
-while True:
-    command = input("Command: ")
-    command = command.lower()
-    if command == "view":
-        view(countries)
-    elif command == "add":
-        add(countries)
-    elif command == "del":
-        delete(countries)
-    elif command  == "exit":
-        print("Bye")
-        break
-    else:
-        print("Not a valid command. Please try again.\n")
+    main_menu()
+    while True:
+        command = input("Command: ")
+        command = command.lower()
+        if command == "view":
+            view(countries)
+        elif command == "add":
+            add(countries)
+        elif command == "del":
+            delete(countries)
+        elif command  == "exit":
+            print("Bye")
+            break
+        else:
+            print("Not a valid command. Please try again.\n")
         
 
 if __name__ == "__main__":
